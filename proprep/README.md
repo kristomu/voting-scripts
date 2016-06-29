@@ -1,9 +1,5 @@
-# voting-scripts
-Miscellaneous voting method scripts
+# proprep
+Proportional representation scripts:
 
-Currently the following types of scripts are stored here:
-
-proprep
--------
-
-Proportional representation methods
+- webster.py: Python script for Webster's method
+- websterweight.py: Python script for Webster's method with weighted voting power 
