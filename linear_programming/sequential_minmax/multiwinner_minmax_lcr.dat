@@ -1,0 +1,39 @@
+data;
+
+param numseats := 2;
+
+# First stage gives:
+#	C: minimal is -2
+#	L: minimal is -10
+#	R: minimal is -8
+
+# so L is elected with all the L-voters and 0.5 of the C-voters (run this to
+# see the ballot allocations).
+
+# In the next step, those ballots would be removed and since there's only one
+# seat left, you'd have a single-winner election. R would be elected since 
+# all R voters and 1.5 C voters remain.
+# This is what we want.
+
+param cand_to_eval := 2;
+
+param numcands := 3;
+param numballots := 3;
+param numvoters := 23;
+
+param ballot_condorcet_matrix := 
+		# C L R
+        [1,*,*]:  1 2 3 :=      # 11: L>C>R
+                1 0 0 1
+                2 1 0 1
+                3 0 0 0
+        [2,*,*]:  1 2 3 :=      # 10: R>C>L
+                1 0 1 0
+                2 0 0 0
+                3 1 1 0
+        [3,*,*]:  1 2 3 :=      #  2: C>L>R
+                1 0 1 1
+                2 0 0 1
+                3 0 0 0;
+
+param ballot_num_voters := 1 11 2 10 3 2;

@@ -1,0 +1,32 @@
+Some ideas for implementing wv
+
+wv lets A>B be equal to the Condorcet matrix's if (A>B) > (B>A), otherwise
+A>B is 0.
+
+With IP, it's easy:
+	chosen[A>B] * A>B > chosen[A>B] * B>A
+
+chosen is binary. For any nonzero value of chosen, A>B must be greater than B>A.
+So we can make this LP as well.
+
+	chosen[A>B] * A>B >= chosen[B>A] * B>A
+	chosen[A>B] + chosen[B>A] = 1
+
+(What happens when there are ties?)
+
+E.g. for minmax:
+
+minimize maxA + maxB + maxC + ...
+subject to:
+	for all X, for all Y != X
+		maxX >= chosen_pw[Y>X] * Y>X
+		chosen_pw[Y>X] * Y>X >= chosen_pw[Y>X] * X>Y
+		chosen_pw[Y>X] + chosen_pw[X>Y] = chosen[X] + chosen[Y]
+		0 <= chosen_pw[Y>X] <= chosen[X]
+
+	sum over all X: chosen[X] = 1
+
+	all X: 0 <= chosen[X] <= 1
+
+should work, although if there are any zeroes, we'll have a problem since
+then we get maxX >= 0, and the optimum will be 0.

@@ -7,3 +7,8 @@ proprep
 -------
 
 Proportional representation methods
+
+linear\_programming
+-------------------
+
+Methods written as GNU MathProg linear or mixed-integer programs
