@@ -1,0 +1,30 @@
+# 40: A
+# 10: B>C=D=E
+# 10: C>B=D=E
+# 10: D>B=C=E
+# 10: E>B=C=D
+
+# 2 seats.
+
+# Ordinary Sainte-Laguë or D'Hondt will give both seats to A.
+# The LP methods give one to A and one to some other party. 
+# (Tiebreaks still suck)
+
+data;
+
+param numparties := 5;
+param numballots := 5;
+
+# Uncomment your choice.
+#param dhondt_quota := 27;
+param sl_quota := 54;
+
+param ballot_weights := 1 40 2 10 3 10 4 10 5 10;
+param num_fielded_candidates := 1 100 2 100 3 100 4 100 5 100;
+
+param rating :    1 2 3 4 5  :=
+		1 9 0 0 0 0
+		2 0 9 8 8 8
+		3 0 8 9 8 8
+		4 0 8 8 9 8
+		5 0 8 8 8 9 ;

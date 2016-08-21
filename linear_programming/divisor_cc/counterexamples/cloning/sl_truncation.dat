@@ -1,0 +1,26 @@
+# https://en.wikipedia.org/wiki/Highest_averages_method#Comparison_between_the_D.27Hondt_and_Sainte-Lagu.C3.AB_methods
+
+# 10 seats, indirectly shows that the Sainte-Lague method does not obey LNHarm.
+
+data;
+
+param numparties := 11;
+param numballots := 11;
+
+param sl_quota := 18182;
+
+param ballot_weights := 1 7834 2 7834 3 7833 4 7833 5 7833 6 7833 7 16000 8 15900 9 12000 10 6000 11 3100;
+param num_fielded_candidates := 1 100 2 100 3 100 4 100 5 100 6 100 7 100 8 100 9 100 10 100 11 100;
+
+param rating :    1 2 3 4 5 6 7 8 9 10 11  :=
+		1 9 0 0 0 0 0 0 0 0  0  0
+		2 0 9 0 0 0 0 0 0 0  0  0 
+		3 0 0 9 0 0 0 0 0 0  0  0
+		4 0 0 0 9 0 0 0 0 0  0  0
+		5 0 0 0 0 9 0 0 0 0  0  0 
+		6 0 0 0 0 0 9 0 0 0  0  0
+		7 0 0 0 0 0 0 9 0 0  0  0
+		8 0 0 0 0 0 0 0 9 0  0  0
+		9 0 0 0 0 0 0 0 0 9  0  0
+	       10 0 0 0 0 0 0 0 0 0  9  0
+	       11 0 0 0 0 0 0 0 0 0  0  9;
