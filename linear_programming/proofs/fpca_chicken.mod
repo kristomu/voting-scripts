@@ -1,12 +1,13 @@
 # The three-winner method
-# A>B>C>A A's score is C's first pref - A's first prefs
-# otherwise CW wins
+# 'Suppose the cycle is A>B>C>A, then A's score is
+# 	C's first prefs - A's first prefs'
+# and highest score wins, otherwise CW wins if there's no cycle
 
 # passes the Chicken Dilemma criterion.
 
 # The idea is to set up equations where we're in a CD situation but the
-# CD's demand that B mustn't win is broken. If that's impossible, then
-# the method passes the CD.
+# CD's demand that "B mustn't win" is broken. If it's impossible to do so, 
+# then the method passes the CD.
 
 # Since the linear programming formulation doesn't support strict inequalities,
 # we add an epsilon and ask the LP solver to maximize it. If that epsilon is
@@ -23,6 +24,7 @@ maximize epsilon: eps;
 # TODO sometime: we assume the cycle is ABCA. Show that if there is a cycle,
 # it must be ABCA; or make a duplicate of this for ACBA.
 # (ABCA is (A>B > B>A), (B>C > C>B), (C>A > A>C))
+#	We've now made a duplicate for ACBA: see below.
 
 # Set up the CD situation from first preference votes alone
 # (This is more strict than the actual CD situation)
