@@ -1,6 +1,6 @@
 # The three-winner method
 # 'Suppose the cycle is A>B>C>A, then A's score is
-# 	C's first prefs - A's first prefs'
+# 	A's first prefs - C's first prefs'
 # and highest score wins, otherwise CW wins if there's no cycle
 
 # passes the Chicken Dilemma criterion.
