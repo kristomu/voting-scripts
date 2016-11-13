@@ -1,6 +1,6 @@
 # bucklin-range
 Voting scripts based on the Bucklin-Range method, which is in turn based on 
-PTASes of the k-median and uncapacitated facility location problems[1][2]. 
+PTASes of the k-median and uncapacitated facility location problems[1]. 
 
 The Double Bucklin variant is not analogous to the UFLP; instead, that variant
 was created by altering the Range variant. 
@@ -15,7 +15,7 @@ candidate-voter distances.
 - [First EM list post, describing Bucklin-Range](http://lists.electorama.com/pipermail/election-methods-electorama.com/2015-January/131069.html) 
 - [Second EM list post, simplifying Bucklin-Range](http://lists.electorama.com/pipermail/election-methods-electorama.com/2016-November/000976.html)
 
-[2] Jain, Kamal, Mohammad Mahdian, and Amin Saberi. "A new greedy approach for facility location problems." (2002). <http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.29.2072>.
+[1] Jain, Kamal, Mohammad Mahdian, and Amin Saberi. "A new greedy approach for facility location problems." (2002). <http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.29.2072>.
 
 ## Description
 
