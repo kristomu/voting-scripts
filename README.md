@@ -8,6 +8,11 @@ proprep
 
 Proportional representation methods
 
+new\_methods
+------------
+
+New methods (constructed by me)
+
 linear\_programming
 -------------------
 
