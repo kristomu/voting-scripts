@@ -1,14 +1,14 @@
 # bucklin-range
 Voting scripts based on the Bucklin-Range method (in turn based on PTASes of
-the k-median and uncapacitated facility location problem).
+the k-median and uncapacitated facility location problems).
 
 ## References
-- [First EM list post describing Bucklin-Range](http://lists.electorama.com/pipermail/election-methods-electorama.com/2015-January/131069.html) 
-- [Second EM list post simplifying Bucklin-Range](http://lists.electorama.com/pipermail/election-methods-electorama.com/2016-November/000976.html)
+- [First EM list post, describing Bucklin-Range](http://lists.electorama.com/pipermail/election-methods-electorama.com/2015-January/131069.html) 
+- [Second EM list post, simplifying Bucklin-Range](http://lists.electorama.com/pipermail/election-methods-electorama.com/2016-November/000976.html)
 
 ## Description
 
-The scripts may be somewhat ugly as they're meant as proof of concepts and
+The scripts may be somewhat ugly as they're meant as proofs of concept and
 some of the tiebreak logic isn't entirely sound yet.
 
 - `bucklin.py` implements the weighted candidate version of Bucklin-Range 
