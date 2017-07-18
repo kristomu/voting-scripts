@@ -16,4 +16,4 @@ New methods (constructed by me)
 linear\_programming
 -------------------
 
-Methods written as GNU MathProg linear or mixed-integer programs
+Methods and proofs written as GNU MathProg linear or mixed-integer programs
