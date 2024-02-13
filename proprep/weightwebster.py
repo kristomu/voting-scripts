@@ -1,5 +1,9 @@
 from scipy.optimize import brentq
 
+# Like webster.py, this program apportions seats according to Webster's
+# method, but it also prints the relative voting power each representative
+# should have to make proportionality exact.
+
 def webster(divisor, party_support):
 	return [int(round(x/divisor)) for x in party_support]
 
@@ -30,31 +34,32 @@ def apportion(desired_num_seats, support):
 def get_vote_weight(apportionment, support, index):
 	if apportionment[i] == 0:
 		return 0
-        return support[i]*sum(apportionment)/float(sum(support)*apportionment[i])
+
+	return support[i]*sum(apportionment)/float(sum(support)*apportionment[i])
 
 # --- #
 
-print "Enter number of seats, followed by parties' support. Finish with CTRL+D."
+print("Enter number of seats, followed by parties' support. Finish with CTRL+D.")
 
 seats, support = get_seats_and_support()
 apportioned_num_seats, found_divisor = apportion(seats, support)
 
 if apportioned_num_seats != seats:
-	print "Could not find a divisor for the apportionment."
-	print "There might be a tie somewhere or the input might be wrong."
+	print("Could not find a divisor for the apportionment.")
+	print("There might be a tie somewhere or the input might be wrong.")
 else:
-	print "Apportioned", apportioned_num_seats, "seats."
-	print "Divisor is", found_divisor
-	print "Apportionment:"
+	print("Apportioned", apportioned_num_seats, "seats.")
+	print("Divisor is", found_divisor)
+	print("Apportionment:")
 	
 	apportionment = webster(found_divisor, support)
 	
-	for i in xrange(len(apportionment)):
+	for i in range(len(apportionment)):
 		num_seats = apportionment[i]
 		weight = get_vote_weight(apportionment, support, i)
 
 		if num_seats != 0:
-			print "%d\t seats, each with weight %.3f" % (num_seats,
-				 weight)
+			print("%d\t seats, each with weight %.3f" % (num_seats,
+				 weight))
 		else:
-			print "%d\t seats" % num_seats
+			print("%d\t seats" % num_seats)

@@ -157,13 +157,13 @@ party_seats = get_apportionment(party_sums, seats)	# P_1...P_n
 party_factors, region_factors = get_biproportional_factors(
 	counts, party_seats, region_seats)
 
-print "--"
+print("--")
 
-print "Biproportional apportionment:"
-print get_biproportional_apportionment(counts, party_seats, 
-	region_seats, party_factors, region_factors)
+print("Biproportional apportionment:")
+print(get_biproportional_apportionment(counts, party_seats,
+	region_seats, party_factors, region_factors))
 
-print "Seats per region:"
-print region_seats
-print "Seats per party:"
-print party_seats
+print("Seats per region:")
+print(region_seats)
+print("Seats per party:")
+print(party_seats)

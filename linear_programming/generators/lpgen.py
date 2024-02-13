@@ -500,7 +500,7 @@ def do_dual_disqualification(numcands,
 					status, output = do_glpsol(program)
 					#print(counter, status)
 					if status != "No primal":
-						tqdm.write("Possible detection: %s [%s, %s]" %
+						tqdm.write("Possible disproof: %s [%s, %s]" %
 							(disqualifying_candidates,
 								perm,
 								sec_disqualifiers))

@@ -145,18 +145,18 @@ def apportion(desired_num_seats, support):
 
 # --- #
 
-print "Enter number of seats, followed by parties' support. Finish with CTRL+D."
+print("Enter number of seats, followed by parties' support. Finish with CTRL+D.")
 
 seats, support = get_seats_and_support()
 apportioned_num_seats, found_divisor = apportion(seats, support)
-print apportioned_num_seats
+print(apportioned_num_seats)
 
 if apportioned_num_seats != seats:
-	print "Could not find a divisor for the apportionment."
-	print "There might be a tie somewhere or the input might be wrong."
+	print("Could not find a divisor for the apportionment.")
+	print("There might be a tie somewhere or the input might be wrong.")
 else:
-	print "Apportioned", apportioned_num_seats, "seats."
-	print "Divisor is", found_divisor
-	print "Apportionment:"
+	print("Apportioned", apportioned_num_seats, "seats.")
+	print("Divisor is", found_divisor)
+	print("Apportionment:")
 	for x in webster(found_divisor, support):
-		print x
+		print(x)
