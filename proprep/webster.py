@@ -19,11 +19,11 @@ def apportion(desired_num_seats, support):
 	if (desired_num_seats < 1):
 		return (0, 0)
 
-	min_divisor = sum(support)/(seats + 0.5 * len(support))
-	max_divisor = sum(support)/(seats * 0.5)
+	min_divisor = sum(support)/(desired_num_seats + 0.5 * len(support))
+	max_divisor = sum(support)/(desired_num_seats * 0.5)
 
 	found_divisor = brentq(webster_root, min_divisor, max_divisor, 
-		args=(seats, support))
+		args=(desired_num_seats, support))
 
 	return (sum(webster(found_divisor, support)), found_divisor)
 

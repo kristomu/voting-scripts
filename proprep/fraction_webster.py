@@ -133,11 +133,11 @@ def apportion(desired_num_seats, support):
 	if (desired_num_seats < 1):
 		return (0, 0)
 
-	min_divisor = Fraction(sum(support), seats + Fraction(len(support), 2))
-	max_divisor = Fraction(sum(support), Fraction(seats, 2))
+	min_divisor = Fraction(sum(support), desired_num_seats + Fraction(len(support), 2))
+	max_divisor = Fraction(sum(support), Fraction(desired_num_seats, 2))
 
 	found_divisor_interval = binary_search(webster_root, min_divisor, 
-		max_divisor, args=(seats, support))
+		max_divisor, args=(desired_num_seats, support))
 
 	found_divisor = get_simplified_fraction(*found_divisor_interval)
 
